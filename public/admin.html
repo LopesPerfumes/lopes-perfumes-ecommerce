@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Lopes Perfumes</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="container">
+            <h1>🔧 Painel Administrativo - Lopes Perfumes</h1>
+            <nav class="admin-nav">
+                <button onclick="mostrarAbaSistema('perfumes')" class="tab-btn ativo">Perfumes</button>
+                <button onclick="mostrarAbaSistema('pedidos')" class="tab-btn">Pedidos</button>
+                <button onclick="mostrarAbaSistema('estoque')" class="tab-btn">Estoque</button>
+                <a href="/" class="btn btn-secondary">← Voltar para Loja</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <div class="container">
+            <!-- Aba Perfumes -->
+            <section id="perfumes" class="aba-admin aba-ativa">
+                <h2>Gerenciar Perfumes</h2>
+                
+                <div class="form-adicionar">
+                    <h3>Adicionar Novo Perfume</h3>
+                    <input type="text" id="nome-perfume" placeholder="Nome do Perfume" required>
+                    <input type="text" id="marca-perfume" placeholder="Marca" required>
+                    <input type="number" id="preco-perfume" placeholder="Preço" step="0.01" required>
+                    <textarea id="descricao-perfume" placeholder="Descrição"></textarea>
+                    <input type="number" id="estoque-perfume" placeholder="Quantidade em Estoque" required>
+                    <button class="btn btn-primary" onclick="adicionarPerfume()">Adicionar Perfume</button>
+                </div>
+
+                <div class="tabela-container">
+                    <h3>Perfumes Cadastrados</h3>
+                    <table class="tabela-admin" id="tabela-perfumes">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Marca</th>
+                                <th>Preço</th>
+                                <th>Estoque</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpo-perfumes">
+                            <!-- Carregado via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Aba Pedidos -->
+            <section id="pedidos" class="aba-admin">
+                <h2>Gerenciar Pedidos</h2>
+                
+                <div class="filtros-pedidos">
+                    <select id="filtro-status" onchange="filtrarPedidos()">
+                        <option value="">Todos os Pedidos</option>
+                        <option value="pendente">Pendentes</option>
+                        <option value="confirmado">Confirmados</option>
+                        <option value="enviado">Enviados</option>
+                        <option value="entregue">Entregues</option>
+                        <option value="cancelado">Cancelados</option>
+                    </select>
+                </div>
+
+                <div class="tabela-container">
+                    <table class="tabela-admin" id="tabela-pedidos">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Telefone</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpo-pedidos">
+                            <!-- Carregado via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Aba Estoque -->
+            <section id="estoque" class="aba-admin">
+                <h2>Alertas de Estoque</h2>
+                
+                <div id="alertas-container" class="alertas-container">
+                    <!-- Alertas carregados via JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+        <p>&copy; 2024 Lopes Perfumes Importados - Painel Administrativo</p>
+    </footer>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
