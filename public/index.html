@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lopes Perfumes Importados - E-commerce</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>🌸 Lopes Perfumes Importados</h1>
+            <p class="tagline">Qualidade e Elegância em Cada Frasco</p>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#" onclick="mostrarSecao('home')">Início</a></li>
+                    <li><a href="#" onclick="mostrarSecao('catalogo')">Catálogo</a></li>
+                    <li><a href="#" onclick="mostrarSecao('carrinho')">🛒 Carrinho (<span id="total-itens">0</span>)</a></li>
+                    <li><a href="https://wa.me/5582998380780?text=Olá%20Lopes%20Perfumes!" target="_blank" class="whatsapp-btn">📱 WhatsApp</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Seção Home -->
+        <section id="home" class="secao">
+            <div class="container">
+                <div class="hero">
+                    <h2>Bem-vindo à Lopes Perfumes Importados!</h2>
+                    <p>Descubra uma seleção exclusiva de perfumes importados com qualidade superior.</p>
+                    <button class="btn btn-primary" onclick="mostrarSecao('catalogo')">Ver Catálogo</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Catálogo -->
+        <section id="catalogo" class="secao">
+            <div class="container">
+                <h2>Nossos Perfumes</h2>
+                <div id="lista-perfumes" class="grid-perfumes">
+                    <!-- Perfumes carregados via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Carrinho -->
+        <section id="carrinho" class="secao">
+            <div class="container">
+                <h2>Seu Carrinho</h2>
+                <div id="carrinho-vazio" class="carrinho-vazio">
+                    <p>Seu carrinho está vazio!</p>
+                </div>
+                <div id="carrinho-cheio" class="carrinho-cheio" style="display: none;">
+                    <table class="tabela-carrinho">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Preço</th>
+                                <th>Quantidade</th>
+                                <th>Total</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="itens-carrinho">
+                            <!-- Itens carregados via JavaScript -->
+                        </tbody>
+                    </table>
+                    <div class="resumo-carrinho">
+                        <h3>Total do Carrinho: R$ <span id="total-carrinho">0.00</span></h3>
+                    </div>
+                    <div class="form-pedido">
+                        <h3>Finalizar Pedido</h3>
+                        <input type="text" id="nome-cliente" placeholder="Seu Nome" required>
+                        <input type="text" id="telefone-cliente" placeholder="Seu Telefone (com DDD)" required>
+                        <input type="text" id="endereco-cliente" placeholder="Seu Endereço" required>
+                        <textarea id="observacoes" placeholder="Observações (opcional)"></textarea>
+                        <button class="btn btn-success" onclick="finalizarPedido()">Finalizar Pedido</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Lopes Perfumes Importados. Todos os direitos reservados.</p>
+            <p>📱 WhatsApp: <a href="https://wa.me/5582998380780" target="_blank">+55 82 99838-0780</a></p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
